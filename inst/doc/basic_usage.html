@@ -14,8 +14,6 @@
 
 <title>Using wordpiece</title>
 
-<link href="data:text/css;charset=utf-8,%0Aa%2Eanchor%2Dsection%20%7Bmargin%2Dleft%3A%2010px%3B%20visibility%3A%20hidden%3B%20color%3A%20inherit%3B%7D%0Aa%2Eanchor%2Dsection%3A%3Abefore%20%7Bcontent%3A%20%27%23%27%3B%7D%0A%2EhasAnchor%3Ahover%20a%2Eanchor%2Dsection%20%7Bvisibility%3A%20visible%3B%7D%0A" rel="stylesheet" />
-<script src="data:application/x-javascript;base64,Ly8gQW5jaG9yIHNlY3Rpb25zIHYxLjAgd3JpdHRlbiBieSBBdHN1c2hpIFlhc3Vtb3RvIG9uIE9jdCAzcmQsIDIwMjAuCmRvY3VtZW50LmFkZEV2ZW50TGlzdGVuZXIoJ0RPTUNvbnRlbnRMb2FkZWQnLCBmdW5jdGlvbigpIHsKICAvLyBEbyBub3RoaW5nIGlmIEFuY2hvckpTIGlzIHVzZWQKICBpZiAodHlwZW9mIHdpbmRvdy5hbmNob3JzID09PSAnb2JqZWN0JyAmJiBhbmNob3JzLmhhc093blByb3BlcnR5KCdoYXNBbmNob3JKU0xpbmsnKSkgewogICAgcmV0dXJuOwogIH0KCiAgY29uc3QgaCA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3JBbGwoJ2gxLCBoMiwgaDMsIGg0LCBoNSwgaDYnKTsKCiAgLy8gRG8gbm90aGluZyBpZiBzZWN0aW9ucyBhcmUgYWxyZWFkeSBhbmNob3JlZAogIGlmIChBcnJheS5mcm9tKGgpLnNvbWUoeCA9PiB4LmNsYXNzTGlzdC5jb250YWlucygnaGFzQW5jaG9yJykpKSB7CiAgICByZXR1cm4gbnVsbDsKICB9CgogIC8vIFVzZSBzZWN0aW9uIGlkIHdoZW4gcGFuZG9jIHJ1bnMgd2l0aCAtLXNlY3Rpb24tZGl2cwogIGNvbnN0IHNlY3Rpb25faWQgPSBmdW5jdGlvbih4KSB7CiAgICByZXR1cm4gKCh4LmNsYXNzTGlzdC5jb250YWlucygnc2VjdGlvbicpIHx8ICh4LnRhZ05hbWUgPT09ICdTRUNUSU9OJykpCiAgICAgICAgICAgID8geC5pZCA6ICcnKTsKICB9OwoKICAvLyBBZGQgYW5jaG9ycwogIGguZm9yRWFjaChmdW5jdGlvbih4KSB7CiAgICBjb25zdCBpZCA9IHguaWQgfHwgc2VjdGlvbl9pZCh4LnBhcmVudEVsZW1lbnQpOwogICAgaWYgKGlkID09PSAnJykgewogICAgICByZXR1cm4gbnVsbDsKICAgIH0KICAgIGxldCBhbmNob3IgPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50KCdhJyk7CiAgICBhbmNob3IuaHJlZiA9ICcjJyArIGlkOwogICAgYW5jaG9yLmNsYXNzTGlzdCA9IFsnYW5jaG9yLXNlY3Rpb24nXTsKICAgIHguY2xhc3NMaXN0LmFkZCgnaGFzQW5jaG9yJyk7CiAgICB4LmFwcGVuZENoaWxkKGFuY2hvcik7CiAgfSk7Cn0pOwo="></script>
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -27,7 +25,14 @@
     </style>
 
 
-<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  code {
+    white-space: pre;
+  }
+  .sourceCode {
+    overflow: visible;
+  }
+</style>
 <style type="text/css" data-origin="pandoc">
 div.sourceCode { overflow-x: auto; }
 table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
@@ -90,6 +95,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 
 
+
 <link href="data:text/css;charset=utf-8,body%20%7B%0Abackground%2Dcolor%3A%20%23fff%3B%0Amargin%3A%201em%20auto%3B%0Amax%2Dwidth%3A%20700px%3B%0Aoverflow%3A%20visible%3B%0Apadding%2Dleft%3A%202em%3B%0Apadding%2Dright%3A%202em%3B%0Afont%2Dfamily%3A%20%22Open%20Sans%22%2C%20%22Helvetica%20Neue%22%2C%20Helvetica%2C%20Arial%2C%20sans%2Dserif%3B%0Afont%2Dsize%3A%2014px%3B%0Aline%2Dheight%3A%201%2E35%3B%0A%7D%0A%23TOC%20%7B%0Aclear%3A%20both%3B%0Amargin%3A%200%200%2010px%2010px%3B%0Apadding%3A%204px%3B%0Awidth%3A%20400px%3B%0Aborder%3A%201px%20solid%20%23CCCCCC%3B%0Aborder%2Dradius%3A%205px%3B%0Abackground%2Dcolor%3A%20%23f6f6f6%3B%0Afont%2Dsize%3A%2013px%3B%0Aline%2Dheight%3A%201%2E3%3B%0A%7D%0A%23TOC%20%2Etoctitle%20%7B%0Afont%2Dweight%3A%20bold%3B%0Afont%2Dsize%3A%2015px%3B%0Amargin%2Dleft%3A%205px%3B%0A%7D%0A%23TOC%20ul%20%7B%0Apadding%2Dleft%3A%2040px%3B%0Amargin%2Dleft%3A%20%2D1%2E5em%3B%0Amargin%2Dtop%3A%205px%3B%0Amargin%2Dbottom%3A%205px%3B%0A%7D%0A%23TOC%20ul%20ul%20%7B%0Amargin%2Dleft%3A%20%2D2em%3B%0A%7D%0A%23TOC%20li%20%7B%0Aline%2Dheight%3A%2016px%3B%0A%7D%0Atable%20%7B%0Amargin%3A%201em%20auto%3B%0Aborder%2Dwidth%3A%201px%3B%0Aborder%2Dcolor%3A%20%23DDDDDD%3B%0Aborder%2Dstyle%3A%20outset%3B%0Aborder%2Dcollapse%3A%20collapse%3B%0A%7D%0Atable%20th%20%7B%0Aborder%2Dwidth%3A%202px%3B%0Apadding%3A%205px%3B%0Aborder%2Dstyle%3A%20inset%3B%0A%7D%0Atable%20td%20%7B%0Aborder%2Dwidth%3A%201px%3B%0Aborder%2Dstyle%3A%20inset%3B%0Aline%2Dheight%3A%2018px%3B%0Apadding%3A%205px%205px%3B%0A%7D%0Atable%2C%20table%20th%2C%20table%20td%20%7B%0Aborder%2Dleft%2Dstyle%3A%20none%3B%0Aborder%2Dright%2Dstyle%3A%20none%3B%0A%7D%0Atable%20thead%2C%20table%20tr%2Eeven%20%7B%0Abackground%2Dcolor%3A%20%23f7f7f7%3B%0A%7D%0Ap%20%7B%0Amargin%3A%200%2E5em%200%3B%0A%7D%0Ablockquote%20%7B%0Abackground%2Dcolor%3A%20%23f6f6f6%3B%0Apadding%3A%200%2E25em%200%2E75em%3B%0A%7D%0Ahr%20%7B%0Aborder%2Dstyle%3A%20solid%3B%0Aborder%3A%20none%3B%0Aborder%2Dtop%3A%201px%20solid%20%23777%3B%0Amargin%3A%2028px%200%3B%0A%7D%0Adl%20%7B%0Amargin%2Dleft%3A%200%3B%0A%7D%0Adl%20dd%20%7B%0Amargin%2Dbottom%3A%2013px%3B%0Amargin%2Dleft%3A%2013px%3B%0A%7D%0Adl%20dt%20%7B%0Afont%2Dweight%3A%20bold%3B%0A%7D%0Aul%20%7B%0Amargin%2Dtop%3A%200%3B%0A%7D%0Aul%20li%20%7B%0Alist%2Dstyle%3A%20circle%20outside%3B%0A%7D%0Aul%20ul%20%7B%0Amargin%2Dbottom%3A%200%3B%0A%7D%0Apre%2C%20code%20%7B%0Abackground%2Dcolor%3A%20%23f7f7f7%3B%0Aborder%2Dradius%3A%203px%3B%0Acolor%3A%20%23333%3B%0Awhite%2Dspace%3A%20pre%2Dwrap%3B%20%0A%7D%0Apre%20%7B%0Aborder%2Dradius%3A%203px%3B%0Amargin%3A%205px%200px%2010px%200px%3B%0Apadding%3A%2010px%3B%0A%7D%0Apre%3Anot%28%5Bclass%5D%29%20%7B%0Abackground%2Dcolor%3A%20%23f7f7f7%3B%0A%7D%0Acode%20%7B%0Afont%2Dfamily%3A%20Consolas%2C%20Monaco%2C%20%27Courier%20New%27%2C%20monospace%3B%0Afont%2Dsize%3A%2085%25%3B%0A%7D%0Ap%20%3E%20code%2C%20li%20%3E%20code%20%7B%0Apadding%3A%202px%200px%3B%0A%7D%0Adiv%2Efigure%20%7B%0Atext%2Dalign%3A%20center%3B%0A%7D%0Aimg%20%7B%0Abackground%2Dcolor%3A%20%23FFFFFF%3B%0Apadding%3A%202px%3B%0Aborder%3A%201px%20solid%20%23DDDDDD%3B%0Aborder%2Dradius%3A%203px%3B%0Aborder%3A%201px%20solid%20%23CCCCCC%3B%0Amargin%3A%200%205px%3B%0A%7D%0Ah1%20%7B%0Amargin%2Dtop%3A%200%3B%0Afont%2Dsize%3A%2035px%3B%0Aline%2Dheight%3A%2040px%3B%0A%7D%0Ah2%20%7B%0Aborder%2Dbottom%3A%204px%20solid%20%23f7f7f7%3B%0Apadding%2Dtop%3A%2010px%3B%0Apadding%2Dbottom%3A%202px%3B%0Afont%2Dsize%3A%20145%25%3B%0A%7D%0Ah3%20%7B%0Aborder%2Dbottom%3A%202px%20solid%20%23f7f7f7%3B%0Apadding%2Dtop%3A%2010px%3B%0Afont%2Dsize%3A%20120%25%3B%0A%7D%0Ah4%20%7B%0Aborder%2Dbottom%3A%201px%20solid%20%23f7f7f7%3B%0Amargin%2Dleft%3A%208px%3B%0Afont%2Dsize%3A%20105%25%3B%0A%7D%0Ah5%2C%20h6%20%7B%0Aborder%2Dbottom%3A%201px%20solid%20%23ccc%3B%0Afont%2Dsize%3A%20105%25%3B%0A%7D%0Aa%20%7B%0Acolor%3A%20%230033dd%3B%0Atext%2Ddecoration%3A%20none%3B%0A%7D%0Aa%3Ahover%20%7B%0Acolor%3A%20%236666ff%3B%20%7D%0Aa%3Avisited%20%7B%0Acolor%3A%20%23800080%3B%20%7D%0Aa%3Avisited%3Ahover%20%7B%0Acolor%3A%20%23BB00BB%3B%20%7D%0Aa%5Bhref%5E%3D%22http%3A%22%5D%20%7B%0Atext%2Ddecoration%3A%20underline%3B%20%7D%0Aa%5Bhref%5E%3D%22https%3A%22%5D%20%7B%0Atext%2Ddecoration%3A%20underline%3B%20%7D%0A%0Acode%20%3E%20span%2Ekw%20%7B%20color%3A%20%23555%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%0Acode%20%3E%20span%2Edt%20%7B%20color%3A%20%23902000%3B%20%7D%20%0Acode%20%3E%20span%2Edv%20%7B%20color%3A%20%2340a070%3B%20%7D%20%0Acode%20%3E%20span%2Ebn%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Efl%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Ech%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Est%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Eco%20%7B%20color%3A%20%23888888%3B%20font%2Dstyle%3A%20italic%3B%20%7D%20%0Acode%20%3E%20span%2Eot%20%7B%20color%3A%20%23007020%3B%20%7D%20%0Acode%20%3E%20span%2Eal%20%7B%20color%3A%20%23ff0000%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%0Acode%20%3E%20span%2Efu%20%7B%20color%3A%20%23900%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%0Acode%20%3E%20span%2Eer%20%7B%20color%3A%20%23a61717%3B%20background%2Dcolor%3A%20%23e3d2d2%3B%20%7D%20%0A" rel="stylesheet" type="text/css" />
 
 
@@ -121,40 +127,63 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-<p>This package applies <a href="https://arxiv.org/pdf/1609.08144v2.pdf">WordPiece</a> tokenization to input text, given an appropriate WordPiece vocabulary. Currently, the <a href="https://arxiv.org/pdf/1810.04805.pdf">BERT</a> tokenization conventions are used. The basic tokenization algorithm is:</p>
+<p>This package applies <a href="https://arxiv.org/pdf/1609.08144v2.pdf">WordPiece</a> tokenization to input text, given an appropriate WordPiece vocabulary. The <a href="https://arxiv.org/pdf/1810.04805.pdf">BERT</a> tokenization conventions are used. The basic tokenization algorithm is:</p>
 <ul>
 <li>Put spaces around punctuation.</li>
 <li>For each resulting word, if the word is found in the WordPiece vocabulary, keep it as-is. If not, starting from the beginning, pull off the biggest piece that <em>is</em> in the vocabulary, and prefix &quot;##&quot; to the remaining piece. Repeat until the entire word is represented by pieces from the vocabulary, if possible.</li>
 <li>If the word can't be represented by vocabulary pieces, or if it exceeds a certain length, replace it with a specified &quot;unknown&quot; token.</li>
 </ul>
 <p>Ideally, a WordPiece vocabulary will be complete enough to represent any word, but this is not required.</p>
-<div id="loading-a-vocabulary" class="section level3">
-<h3>Loading a Vocabulary</h3>
-<p>The vocabulary is represented by the package as a named integer vector, with a logical attribute <code>is_cased</code> to indicate whether the vocabulary is case sensitive. The names are the actual tokens, and the integer values are the token indices (this would be the input to a BERT model, for example).</p>
-<p>A vocabulary can be read from a text file containing a single token per line. The token index is taken to be the line number, <em>starting from zero</em>. These conventions are adopted for compatibility with the vocabulary and file format used in the pretrained BERT checkpoints released by Google Research. The casedness of the vocabulary is inferred from the content of the vocabulary.</p>
-<p>When a text vocabulary is loaded in an interactive R session, the option is given to cache the vocabulary as an RDS file for faster future loading.</p>
+<div id="provided-vocabularies" class="section level2">
+<h2>Provided Vocabularies</h2>
+<p>Two vocabularies are provided via the {wordpiece.data} package. These are the wordpiece vocabularies used in Google Research's BERT models (and most models based on BERT).</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(wordpiece)
-<span class="co"># Get path to sample vocabulary included with package.</span>
+
+<span class="co"># The default vocabulary is uncased.</span>
+<span class="kw">wordpiece_tokenize</span>(
+  <span class="st">&quot;I like tacos!&quot;</span>
+)
+<span class="co">#&gt; [[1]]</span>
+<span class="co">#&gt;     i  like    ta ##cos     ! </span>
+<span class="co">#&gt;  1045  2066 11937 13186   999</span>
+
+<span class="co"># A cased vocabulary is also provided.</span>
+<span class="kw">wordpiece_tokenize</span>(
+  <span class="st">&quot;I like tacos!&quot;</span>,
+  <span class="dt">vocab =</span> <span class="kw">wordpiece_vocab</span>(<span class="dt">cased =</span> <span class="ot">TRUE</span>)
+)
+<span class="co">#&gt; [[1]]</span>
+<span class="co">#&gt;     I  like    ta ##cos     ! </span>
+<span class="co">#&gt;   146  1176 27629 13538   106</span></code></pre></div>
+</div>
+<div id="loading-a-vocabulary" class="section level2">
+<h2>Loading a Vocabulary</h2>
+<p>For the rest of this vignette, we use a tiny vocabulary for illustrative purposes. You should not use this vocabulary for actual tokenization.</p>
+<p>The vocabulary is represented by the package as a named integer vector, with a logical attribute <code>is_cased</code> to indicate whether the vocabulary is case sensitive. The names are the actual tokens, and the integer values are the token indices. The integer values would be the input to a BERT model, for example.</p>
+<p>A vocabulary can be read from a text file containing a single token per line. The token index is taken to be the line number, <em>starting from zero</em>. These conventions are adopted for compatibility with the vocabulary and file format used in the pretrained BERT checkpoints released by Google Research. The casedness of the vocabulary is inferred from the content of the vocabulary.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Get path to sample vocabulary included with package.</span>
 vocab_path &lt;-<span class="st"> </span><span class="kw">system.file</span>(<span class="st">&quot;extdata&quot;</span>, <span class="st">&quot;tiny_vocab.txt&quot;</span>, <span class="dt">package =</span> <span class="st">&quot;wordpiece&quot;</span>)
 
 <span class="co"># Load the vocabulary.</span>
-vocab &lt;-<span class="st"> </span><span class="kw">load_or_retrieve_vocab</span>(vocab_path, <span class="dt">use_cache =</span> <span class="ot">FALSE</span>)
+vocab &lt;-<span class="st"> </span><span class="kw">load_vocab</span>(vocab_path)
 
 <span class="co"># Take a peek at the vocabulary.</span>
 <span class="kw">head</span>(vocab)
 <span class="co">#&gt; [PAD] [CLS] [SEP]     !     .     , </span>
 <span class="co">#&gt;     0     1     2     3     4     5</span></code></pre></div>
+<p>When a text vocabulary is loaded with <code>load_or_retrieve_vocabulary</code> in an interactive R session, the option is given to cache the vocabulary as an RDS file for faster future loading.</p>
 </div>
-<div id="tokenizing-text" class="section level3">
-<h3>Tokenizing Text</h3>
+<div id="tokenizing-text" class="section level2">
+<h2>Tokenizing Text</h2>
 <p>Tokenize text by calling <code>wordpiece_tokenize</code> on the text, passing the vocabulary as the <code>vocab</code> parameter. The output of <code>wordpiece_tokenize</code> is a named integer vector of token indices.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Now tokenize some text!</span>
 <span class="kw">wordpiece_tokenize</span>(<span class="dt">text =</span> <span class="st">&quot;I love tacos, apples, and tea!&quot;</span>, <span class="dt">vocab =</span> vocab)
+<span class="co">#&gt; [[1]]</span>
 <span class="co">#&gt;     i  love tacos     ,   app ##les     ,   and     t   ##e   ##a     ! </span>
 <span class="co">#&gt;     6     7     8     5    10    11     5     9    30    41    37     3</span></code></pre></div>
 </div>
-<div id="vocabulary-case" class="section level3">
-<h3>Vocabulary Case</h3>
+<div id="vocabulary-case" class="section level2">
+<h2>Vocabulary Case</h2>
 <p>The above vocabulary contained no tokens starting with an uppercase letter, so it was assumed to be uncased. When tokenizing text with an uncased vocabulary, the input is converted to lowercase before any other processing is applied. If the vocabulary contains at least one capitalized token, it will be taken as case-sensitive, and the case of the input text is preserved. Note that in a cased vocabulary, capitalized and uncapitalized versions of the same word are different tokens, and must <em>both</em> be included in the vocabulary to be recognized.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># The above vocabulary was uncased.</span>
 <span class="kw">attr</span>(vocab, <span class="st">&quot;is_cased&quot;</span>)
@@ -163,7 +192,7 @@ vocab &lt;-<span class="st"> </span><span class="kw">load_or_retrieve_vocab</spa
 <span class="co"># Here is the same vocabulary, but containing the capitalized token &quot;Hi&quot;.</span>
 vocab_path2 &lt;-<span class="st"> </span><span class="kw">system.file</span>(<span class="st">&quot;extdata&quot;</span>, <span class="st">&quot;tiny_vocab_cased.txt&quot;</span>, 
                            <span class="dt">package =</span> <span class="st">&quot;wordpiece&quot;</span>)
-vocab_cased &lt;-<span class="st"> </span><span class="kw">load_or_retrieve_vocab</span>(vocab_path2, <span class="dt">use_cache =</span> <span class="ot">FALSE</span>)
+vocab_cased &lt;-<span class="st"> </span><span class="kw">load_vocab</span>(vocab_path2)
 <span class="kw">head</span>(vocab_cased)
 <span class="co">#&gt; [PAD] [CLS] [SEP]     !     .     , </span>
 <span class="co">#&gt;     0     1     2     3     4     5</span>
@@ -175,16 +204,17 @@ vocab_cased &lt;-<span class="st"> </span><span class="kw">load_or_retrieve_voca
 <span class="co"># ... so the tokenization will *not* convert strings to lowercase, and so the</span>
 <span class="co"># words &quot;I&quot; and &quot;And&quot; are not found in the vocabulary (though &quot;and&quot; still is).</span>
 <span class="kw">wordpiece_tokenize</span>(<span class="dt">text =</span> <span class="st">&quot;And I love tacos and salsa!&quot;</span>, <span class="dt">vocab =</span> vocab_cased)
+<span class="co">#&gt; [[1]]</span>
 <span class="co">#&gt; [UNK] [UNK]  love tacos   and     s   ##a   ##l   ##s   ##a     ! </span>
 <span class="co">#&gt;    64    64     8     9    10    30    38    49    56    38     3</span></code></pre></div>
 </div>
-<div id="representing-unknown-tokens" class="section level3">
-<h3>Representing &quot;Unknown&quot; Tokens</h3>
+<div id="representing-unknown-tokens" class="section level2">
+<h2>Representing &quot;Unknown&quot; Tokens</h2>
 <p>Note that the default value for the <code>unk_token</code> argument, &quot;[UNK]&quot;, is present in the above vocabularies, so it had an integer index in the tokenization. If that token were not in the vocabulary, its index would be coded as <code>NA</code>.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">
-<span class="kw">wordpiece_tokenize</span>(<span class="dt">text =</span> <span class="st">&quot;I love tacos!&quot;</span>, 
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">wordpiece_tokenize</span>(<span class="dt">text =</span> <span class="st">&quot;I love tacos!&quot;</span>, 
                    <span class="dt">vocab =</span> vocab_cased, 
                    <span class="dt">unk_token =</span> <span class="st">&quot;[missing]&quot;</span>)
+<span class="co">#&gt; [[1]]</span>
 <span class="co">#&gt; [missing]      love     tacos         ! </span>
 <span class="co">#&gt;        NA         8         9         3</span></code></pre></div>
 <p>The package defaults are set to be compatible with BERT tokenization. If you have a different use case, be sure to check all parameter values.</p>
