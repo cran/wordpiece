@@ -169,8 +169,7 @@ vocab &lt;-<span class="st"> </span><span class="kw">load_vocab</span>(vocab_pat
 
 <span class="co"># Take a peek at the vocabulary.</span>
 <span class="kw">head</span>(vocab)
-<span class="co">#&gt; [PAD] [CLS] [SEP]     !     .     , </span>
-<span class="co">#&gt;     0     1     2     3     4     5</span></code></pre></div>
+<span class="co">#&gt; [1] &quot;[PAD]&quot; &quot;[CLS]&quot; &quot;[SEP]&quot; &quot;!&quot;     &quot;.&quot;     &quot;,&quot;</span></code></pre></div>
 <p>When a text vocabulary is loaded with <code>load_or_retrieve_vocabulary</code> in an interactive R session, the option is given to cache the vocabulary as an RDS file for faster future loading.</p>
 </div>
 <div id="tokenizing-text" class="section level2">
@@ -194,8 +193,7 @@ vocab_path2 &lt;-<span class="st"> </span><span class="kw">system.file</span>(<s
                            <span class="dt">package =</span> <span class="st">&quot;wordpiece&quot;</span>)
 vocab_cased &lt;-<span class="st"> </span><span class="kw">load_vocab</span>(vocab_path2)
 <span class="kw">head</span>(vocab_cased)
-<span class="co">#&gt; [PAD] [CLS] [SEP]     !     .     , </span>
-<span class="co">#&gt;     0     1     2     3     4     5</span>
+<span class="co">#&gt; [1] &quot;[PAD]&quot; &quot;[CLS]&quot; &quot;[SEP]&quot; &quot;!&quot;     &quot;.&quot;     &quot;,&quot;</span>
 
 <span class="co"># vocab_cased is inferred to be case-sensitive...</span>
 <span class="kw">attr</span>(vocab_cased, <span class="st">&quot;is_cased&quot;</span>)
